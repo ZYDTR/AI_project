@@ -5,8 +5,8 @@ from utils import generate_script
 st.title("🎬 视频脚本生成器")
 
 # API Key Input
-api_key = st.sidebar.text_input("请输入OpenAI API密钥：", type="password")
-api_url = st.sidebar.text_input("请输入中转url：", type="password")
+api_key = st.sidebar.text_input("请输入OpenAI API密钥：", type="password", value=st.secrets.get("PROXY_API_KEY", ""))
+api_url = st.sidebar.text_input("请输入中转url：", type="password", value=st.secrets.get("PROXY_SERVER_URL", ""))
 st.sidebar.markdown("[获取OpenAI API密钥](https://platform.openai.com/signup)")
 
 # Subject Input
