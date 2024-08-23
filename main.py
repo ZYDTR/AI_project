@@ -6,6 +6,7 @@ st.title("🎬 视频脚本生成器")
 
 # API Key Input
 api_key = st.sidebar.text_input("请输入OpenAI API密钥：", type="password")
+api_url = st.sidebar.text_input("请输入中转url：", type="password")
 st.sidebar.markdown("[获取OpenAI API密钥](https://platform.openai.com/signup)")
 
 # Subject Input
@@ -25,7 +26,7 @@ if st.button("生成脚本"):
     with st.spinner("AI正在思考中, 请稍等..."):
         # Dummy function to simulate script generation
         # Replace with your actual API call
-        search_result, title, script = generate_script(subject, video_length, creativity, api_key)
+        search_result, title, script = generate_script(subject, video_length, creativity, api_key, api_url)
 
         st.success("视频脚本已生成!")
         st.subheader("🔥 视频标题:")
