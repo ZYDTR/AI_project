@@ -67,7 +67,7 @@ load_dotenv()
 api_key = os.getenv("PROXY_API_KEY")
 api_url = os.getenv("PROXY_SERVER_URL")
 
-def generate_script(video_subject, title, video_length, creativity, api_key):
+def generate_script(video_subject, video_length, creativity, api_key):
     title_template = ChatPromptTemplate.from_messages(
         [
             ("human", f"please give this video a title, which is about '{video_subject}'")
@@ -106,7 +106,7 @@ def generate_script(video_subject, title, video_length, creativity, api_key):
     # if hasattr(script_response, 'content') else str(script_response)
     return search_result, title, script
 
-print(generate_script("sora的妙用", "sora", 1, 1, api_key))
+# print(generate_script("sora的妙用", 1, 1, api_key))
 
 
 #     try:
